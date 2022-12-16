@@ -18,10 +18,7 @@ export default function App() {
         price={136}
       />
 
-function handleTextareaChange(e) {
-    setAnswer(e.target.value);
-  }
-    </div>
+
   );
 }
 
