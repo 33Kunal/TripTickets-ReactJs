@@ -17,6 +17,9 @@ export default function App() {
         title="Life Lessons with Katie Zaferes"
         price={136}
       />
+ function handleTextareaChange(e) {
+    setAnswer(e.target.value);
+  }
 
 
   );
