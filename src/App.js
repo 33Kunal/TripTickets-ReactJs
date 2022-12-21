@@ -26,7 +26,12 @@ export default function App() {
       <p>
         In which city is there a billboard that turns air into drinkable water?
       </p>
-
+      <form onSubmit={handleSubmit}>
+        <textarea
+          value={answer}
+          onChange={handleTextareaChange}
+          disabled={status === 'submitting'}
+        />
 
   );
 }
