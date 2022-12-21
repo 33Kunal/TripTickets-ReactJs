@@ -46,6 +46,9 @@ function submitForm(answer) {
     }, 1500);
   });
 }
+function handleFirstNameChange(e) {
+    setFirstName(e.target.value);
+  }
   );
 }
 
