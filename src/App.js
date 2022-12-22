@@ -50,5 +50,14 @@ function handleFirstNameChange(e) {
     setFirstName(e.target.value);
   }
   );
+  return (
+    <>
+      <h2>Let’s check you in</h2>
+      <label>
+        First name:{' '}
+        <input
+          value={firstName}
+          onChange={handleFirstNameChange}
+        />
 }
 
