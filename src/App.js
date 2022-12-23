@@ -72,5 +72,11 @@ function handleFirstNameChange(e) {
           onChange={handleLastNameChange}
         />
       </label>
+      function Panel({
+  title,
+  children,
+  isActive,
+  onShow
+})
 }
 
