@@ -64,5 +64,13 @@ function handleFirstNameChange(e) {
           value={firstName}
           onChange={handleFirstNameChange}
         />
+        </label>
+      <label>
+        Last name:{' '}
+        <input
+          value={lastName}
+          onChange={handleLastNameChange}
+        />
+      </label>
 }
 
