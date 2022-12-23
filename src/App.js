@@ -59,5 +59,10 @@ function handleFirstNameChange(e) {
           value={firstName}
           onChange={handleFirstNameChange}
         />
+        First name:{' '}
+        <input
+          value={firstName}
+          onChange={handleFirstNameChange}
+        />
 }
 
