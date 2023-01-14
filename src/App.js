@@ -78,5 +78,18 @@ function handleFirstNameChange(e) {
   isActive,
   onShow
 })
+{
+  return (
+    <section className="panel">
+      <h3>{title}</h3>s
+      {isActive ? (
+        <p>{children}</p>
+      ): (
+        <button onClick={onShow}>
+          Show
+        </button>
+      )}
+    </section>
+  );
 }
 
