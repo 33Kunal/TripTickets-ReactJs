@@ -92,4 +92,15 @@ function handleFirstNameChange(e) {
     </section>
   );
 }
+<div>
+     <ContactList
+       contacts={contacts}
+       selectedContact={to}
+       onSelect={contact => setTo(contact)}
+     />
+     <Chat contact={to} />
+   </div>
+ )
+}
+}
 
