@@ -108,11 +108,18 @@ function handleFirstNameChange(e) {
   { name: 'Bob', email: 'bob@mail.com' }
 ];
 
-export default function TaskApp() {
+export default function TaskApp() {s
   const [tasks, dispatch] = useReducer(
     tasksReducer,
     initialTasks
   );
+  function handleAddTask(text) {
+    dispatch({
+      type: 'added',
+      id: nextId++,
+      text: text,
+    });
+  }
 
 }
 }
