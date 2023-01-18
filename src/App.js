@@ -120,6 +120,12 @@ export default function TaskApp() {s
       text: text,
     });
   }
+  function handleChangeTask(task) {
+    dispatch({
+      type: 'changed',
+      task: task
+    });
+  }
 
 }
 }
