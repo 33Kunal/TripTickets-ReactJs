@@ -126,6 +126,12 @@ export default function TaskApp() {s
       task: task
     });
   }
+  function handleDeleteTask(taskId) {
+    dispatch({
+      type: 'deleted',
+      id: taskId
+    });
+  }
 
 }
 }
