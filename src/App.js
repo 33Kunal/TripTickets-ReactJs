@@ -116,6 +116,20 @@ export default function TaskApp() {s
  
   }
 
+return (
+    <>
+      <h1>Prague itinerary</h1>
+      <AddTask
+        onAddTask={handleAddTask}
+      />
+      <TaskList
+        tasks={tasks}
+        onChangeTask={handleChangeTask}
+        onDeleteTask={handleDeleteTask}
+      />
+    </>
+  );
+}
 }
 }
 
