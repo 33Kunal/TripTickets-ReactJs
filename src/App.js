@@ -78,58 +78,7 @@ function handleFirstNameChange(e) {
   isActive,
   onShow
 })
-{
-  return (
-    <section className="panel">
-      <h3>{title}</h3>s
-      {isActive ? (
-        <p>{children}</p>
-      ): (
-        <button onClick={onShow}>
-          Show
-        </button>
-      )}
-    </section>
-  );
-}
-<div>
-     <ContactList
-       contacts={contacts}
-       selectedContact={to}
-       onSelect={contact => setTo(contact)}
-     />
-     <Chat contact={to} />
-   </div>
- )
- const contacts = [
 
-  { name: 'Taylor', email: 'taylor@mail.com' },
-  { name: 'Alice', email: 'alice@mail.com' },
-  { name: 'Bob', email: 'bob@mail.com' }
-];
 
-export default function TaskApp() {s
-  const [tasks, dispatch] = useReducer(
-    tasksReducer,
-    initialTasks
   );
- 
-  }
-
-return (
-    <>
-      <h1>Prague itinerary</h1>
-      <AddTask
-        onAddTask={handleAddTask}
-      />
-      <TaskList
-        tasks={tasks}
-        onChangeTask={handleChangeTask}
-        onDeleteTask={handleDeleteTask}
-      />
-    </>
-  );
-}
-}
-}
 
