@@ -122,6 +122,12 @@ const initialTasks = [
   { id: 1, text: 'Watch a puppet show', done: false },
   { id: 2, text: 'Lennon Wall pic', done: false }
 ];
+}
+default: {
+  throw Error('Unknown action: ' + action.type);
+}
+}
+}
 
 }
 
