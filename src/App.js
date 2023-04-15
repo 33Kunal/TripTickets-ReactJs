@@ -1,128 +1,89 @@
-import React from "react";
-import "./App.css";
-import Card from "./components/Card";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
+import './App.css';
 
-export default function App() {
-  return (
-    <div>
-      <Navbar />
-      <Hero />
-      <Card
-        img="KATIE-PERRY.PNG"
-        rating="5.0"
-        reviewCount={6}
-        country="USA"
-        title="Life Lessons with Katie Zaferes"
-        price={136}
-      />
- function handleTextareaChange(e) {
-    setAnswer(e.target.value);
+import React from 'react';
+import { ZoomMtg } from '@zoomus/websdk';
+
+ZoomMtg.setZoomJSLib('https://source.zoom.us/2.14.0/lib', '/av');
+
+ZoomMtg.preLoadWasm();
+ZoomMtg.prepareWebSDK();
+// loads language files, also passes any error messages to the ui
+ZoomMtg.i18n.load('en-US');
+ZoomMtg.i18n.reload('en-US');
+
+function App() {
+
+  var authEndpoint = ''
+  var sdkKey = ''
+  var meetingNumber = '123456789'
+  var passWord = ''
+  var role = 0
+  var userName = 'React'
+  var userEmail = ''
+  var registrantToken = ''
+  var zakToken = ''
+  var leaveUrl = 'http://localhost:3000'
+
+  function getSignature(e) {
+    e.preventDefault();
+
+    fetch(authEndpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        meetingNumber: meetingNumber,
+        role: role
+      })
+    }).then(res => res.json())
+    .then(response => {
+      startMeeting(response.signature)
+    }).catch(error => {
+      console.error(error)
+    })
   }
-  return (
-    <>
-      <h2>City quiz</h2>
-      <p>
-        In which city is there a billboard that turns air into drinkable water?
-      </p>
-      <form onSubmit={handleSubmit}>
-        <textarea
-          value={answer}
-          onChange={handleTextareaChange}
-          disabled={status === 'submitting'}
-        />
 
-function submitForm(answer) {
-  // Pretend it's hitting the network.
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      let shouldError = answer.toLowerCase() !== 'lima'
-      if (shouldError) {
-        reject(new Error('Good guess but a wrong answer. Try again!'));
-      } else {
-        resolve();
+  function startMeeting(signature) {
+    document.getElementById('zmmtg-root').style.display = 'block'
+
+    ZoomMtg.init({
+      leaveUrl: leaveUrl,
+      success: (success) => {
+        console.log(success)
+
+        ZoomMtg.join({
+          signature: signature,
+          sdkKey: sdkKey,
+          meetingNumber: meetingNumber,
+          passWord: passWord,
+          userName: userName,
+          userEmail: userEmail,
+          tk: registrantToken,
+          zak: zakToken,
+          success: (success) => {
+            console.log(success)
+          },
+          error: (error) => {
+            console.log(error)
+          }
+        })
+
+      },
+      error: (error) => {
+        console.log(error)
       }
-    }, 1500);
-  });
-}
-function handleFirstNameChange(e) {
-    setFirstName(e.target.value);
+    })
   }
-  );
+
   return (
-    <>
-      <h2>Let’s check you in</h2>
-      <label>
-        First name:{' '}
-        <input
-          value={firstName}
-          onChange={handleFirstNameChange}
-        />
-        First name:{' '}
-        <input
-          value={firstName}
-          onChange={handleFirstNameChange}
-        />
-        </label>
-      <label>
-        Last name:{' '}
-        <input
-          value={lastName}
-          onChange={handleLastNameChange}
-        />
-      </label>
-      function Panel({
-  title,
-  children,
-  isActive,
-  onShow
-})
+    <div className="App">
+      <main>
+        <h1>Zoom Meeting SDK Sample React</h1>
 
-return (
-    <>
-      <h1>Prague itinerary</h1>
-      <AddTask
-        onAddTask={handleAddTask}
-      />
-      <TaskList
-        tasks={tasks}
-        onChangeTask={handleChangeTask}
-        onDeleteTask={handleDeleteTask}
-      />
-  
-  function tasksReducer(tasks, action) {
-  switch (action.type) {
-    case 'added': {
-      return [...tasks, {
-        id: action.id,
-        text: action.text,
-        done: false
-      }];
-    }
-    case 'changed': {
-      return tasks.map(t => {
-        if (t.id === action.task.id) {
-          return action.task;
-        } else {
-          return t;
-        }
-      });
-    }
-    case 'deleted': {
-      return tasks.filter(t => t.id !== action.id);
-    }
-    default: {
-      throw Error('Unknown action: ' + action.type);
-    }
-  }
-  
-
-
-}
-}
-
-}
-
+        <button onClick={getSignature}>Join Meeting</button>
+      </main>
+    </div>
   );
+}
+
+export default App;
 
