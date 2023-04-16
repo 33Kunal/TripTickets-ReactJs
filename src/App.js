@@ -72,6 +72,11 @@ function App() {
         console.log(error)
       }
     })
+    export default function TaskApp() {
+      const [tasks, dispatch] = useReducer(
+        tasksReducer,
+        initialTasks
+      );
   }
 
   return (
