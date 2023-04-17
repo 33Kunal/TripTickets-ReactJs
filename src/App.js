@@ -86,6 +86,12 @@ function App() {
       text: text,
     });
   }
+  function handleChangeTask(task) {
+    dispatch({
+      type: 'changed',
+      task: task
+    });
+  }
 
   return (
     <div className="App">
