@@ -120,6 +120,8 @@ function App() {
           done: false
         }];
       }
+      case 'changed': {
+        return tasks.map(t =>
           
 }
 
