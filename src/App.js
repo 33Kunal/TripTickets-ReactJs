@@ -116,6 +116,11 @@ function App() {
       case 'added': {
         return [...tasks, {
           id: action.id,
+          text: action.text,
+          done: false
+        }];
+      }
+          
 }
 
   return (
