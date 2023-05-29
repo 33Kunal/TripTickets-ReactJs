@@ -128,6 +128,10 @@ function App() {
             return t;
           }
         });
+      }
+      case 'deleted': {
+        return tasks.filter(t => t.id !== action.id);
+      }
           
 }
 
