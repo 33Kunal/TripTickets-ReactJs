@@ -132,6 +132,11 @@ function App() {
       case 'deleted': {
         return tasks.filter(t => t.id !== action.id);
       }
+      default: {
+        throw Error('Unknown action: ' + action.type);
+      }
+    }
+  }
           
 }
 
