@@ -143,6 +143,13 @@ const initialTasks = [
   { id: 1, text: 'Watch a puppet show', done: false },
   { id: 2, text: 'Lennon Wall pic', done: false }
 ];
+lass App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.zoomCall = React.createRef();
+    this.state = {
+      data_loaded: false,
           
 }
 
