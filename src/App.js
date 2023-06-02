@@ -150,6 +150,12 @@ lass App extends Component {
     this.zoomCall = React.createRef();
     this.state = {
       data_loaded: false,
+      meeting_id: '',
+      meeting_password: '',
+      join_url: '',
+      status: ''
+    }
+  }
           
 }
 
