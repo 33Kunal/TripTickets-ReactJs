@@ -155,7 +155,10 @@ lass App extends Component {
       join_url: '',
       status: ''
     }
+    
   }
+  onCreateMeetingClick = () => {
+    // this.zoomCall.current.startZoomCall();
           
 }
 
