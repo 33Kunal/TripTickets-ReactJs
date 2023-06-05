@@ -159,6 +159,8 @@ lass App extends Component {
   }
   onCreateMeetingClick = () => {
     // this.zoomCall.current.startZoomCall();
+    console.log('Create Meeting Button Clicked');
+    fetch("http://localhost:8000")
           
 }
 
