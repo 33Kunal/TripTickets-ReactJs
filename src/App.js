@@ -170,7 +170,9 @@ lass App extends Component {
     console.log('Error: ', err);
 })
 }
-          
+joinMeeting = () => {
+  this.zoomCall.current.startZoomCall(this.state.meeting_id, this.state.meeting_password);
+}
 }
 
   return (
