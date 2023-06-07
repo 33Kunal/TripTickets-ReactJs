@@ -182,6 +182,11 @@ showMeetingData = (data) => {
     join_url: data.meeting_response.join_url,
     status: data.meeting_response.status
   })
+  render() {
+    return(
+      <div className="App">
+        <FlexView hAlignContent='center'>
+            <FlexView >
 }
 }
 
