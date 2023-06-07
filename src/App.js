@@ -187,7 +187,44 @@ showMeetingData = (data) => {
       <div className="App">
         <FlexView hAlignContent='center'>
             <FlexView >
-}
+} <div className="create-meeting-element">
+                <button disabled={this.state.data_loaded} onClick={this.onCreateMeetingClick} style={{width: '12em', height: '3em', backgroundColor: 'green'}} >
+                 Generate JWT Token And Create Meeting
+               </button>
+            </div>
+            <div className="join-meeting-element">
+               <button disabled={!this.state.data_loaded} onClick={this.joinMeeting} style={{width: '12em', height: '3em', backgroundColor: 'green', marginLeft: '2em'}}>
+              Join Meeting
+               </button>
+            </div>
+
+           {/* Display the Data of the meeting generated via Zoom API call */}
+          </FlexView>
+          {
+            this.state.data_loaded ? 
+             <div>
+               Meeting Data After API call:
+               <FlexView column vAlignContent='center'>
+                  <div>Meeting ID: {this.state.meeting_id}</div>
+                  <div>Meeting Password: {this.state.meeting_password}</div>
+                  <div>Join URL: {this.state.join_url}</div>
+                  <div>Meeting Status: {this.state.status}</div>
+               </FlexView>
+             </div>
+               :
+             <div>
+              Nothing to show here
+            </div>
+          }
+          
+      </FlexView> 
+      <header className="App-header">
+        <ZoomCall 
+          ref={this.zoomCall}/>
+      </header>
+    </div>    )
+   }
+ }
 }
 
   return (
