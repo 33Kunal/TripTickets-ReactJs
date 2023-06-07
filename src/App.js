@@ -173,6 +173,10 @@ lass App extends Component {
 joinMeeting = () => {
   this.zoomCall.current.startZoomCall(this.state.meeting_id, this.state.meeting_password);
 }
+showMeetingData = (data) => {
+  console.log('App data:', data);
+  this.setState({
+    data_loaded: true,
 }
 
   return (
