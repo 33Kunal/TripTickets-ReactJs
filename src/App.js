@@ -217,14 +217,7 @@ showMeetingData = (data) => {
             </div>
           }
           
-      </FlexView> 
-      <header className="App-header">
-        <ZoomCall 
-          ref={this.zoomCall}/>
-      </header>
-    </div>    )
-   }
- }
+      
 }
 
   return (
