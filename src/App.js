@@ -201,21 +201,7 @@ showMeetingData = (data) => {
            {/* Display the Data of the meeting generated via Zoom API call */}
           </FlexView>
           {
-            this.state.data_loaded ? 
-             <div>
-               Meeting Data After API call:
-               <FlexView column vAlignContent='center'>
-                  <div>Meeting ID: {this.state.meeting_id}</div>
-                  <div>Meeting Password: {this.state.meeting_password}</div>
-                  <div>Join URL: {this.state.join_url}</div>
-                  <div>Meeting Status: {this.state.status}</div>
-               </FlexView>
-             </div>
-               :
-             <div>
-              Nothing to show here
-            </div>
-          }
+           
           
       
 }
