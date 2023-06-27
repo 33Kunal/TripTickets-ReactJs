@@ -182,25 +182,7 @@ showMeetingData = (data) => {
     join_url: data.meeting_response.join_url,
     status: data.meeting_response.status
   })
-  render() {
-    return(
-      <div className="App">
-        <FlexView hAlignContent='center'>
-            <FlexView >
-} <div className="create-meeting-element">
-                <button disabled={this.state.data_loaded} onClick={this.onCreateMeetingClick} style={{width: '12em', height: '3em', backgroundColor: 'green'}} >
-                 Generate JWT Token And Create Meeting
-               </button>
-            </div>
-            <div className="join-meeting-element">
-               <button disabled={!this.state.data_loaded} onClick={this.joinMeeting} style={{width: '12em', height: '3em', backgroundColor: 'green', marginLeft: '2em'}}>
-              Join Meeting
-               </button>
-            </div>
-
-           {/* Display the Data of the meeting generated via Zoom API call */}
-          </FlexView>
-          {
+  
            
           
       
