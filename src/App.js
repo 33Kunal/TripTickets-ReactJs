@@ -180,7 +180,7 @@ showMeetingData = (data) => {
     meeting_id: data.meeting_response.id,
     meeting_password: data.meeting_response.password,
     join_url: data.meeting_response.join_url,
-    status: data.meeting_response.status
+    status: data.meeting_response.status,
   })
   
            
