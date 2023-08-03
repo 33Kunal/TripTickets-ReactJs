@@ -145,16 +145,16 @@ const initialTasks = [
 ];
 lass App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.zoomCall = React.createRef();
-    this.state = {
-      data_loaded: false,
-      meeting_id: '',
-      meeting_password: '',
-      join_url: '',
-      status: ''
-    }
+  // constructor(props) {
+  //   super(props);
+  //   this.zoomCall = React.createRef();
+  //   this.state = {
+  //     data_loaded: false,
+  //     meeting_id: '',
+  //     meeting_password: '',
+  //     join_url: '',
+  //     status: ''
+  //   }
     
   }
   onCreateMeetingClick = () => {
@@ -197,7 +197,7 @@ showMeetingData = (data) => {
       </main>
     </div>
   );
-}
+}}
 
 export default App;
 
