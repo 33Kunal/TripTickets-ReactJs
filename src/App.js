@@ -17,6 +17,19 @@ export default function App() {
         title="Life Lessons with Katie Zaferes"
         price={136}
       />
+
+async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus('submitting');
+    try {
+      await submitForm(answer);
+      setStatus('success');
+    } catch (err) {
+      setStatus('typing');
+      setError(err);
+    }
+  }
     </div>
   );
 }
+
